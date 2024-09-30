@@ -1,0 +1,45 @@
+git clone https://github.com/Natan201556/CustomSetupWizard.git
+cd CustomSetupWizard
+cd CreateFileOnDesktop
+python create_file_on_desktop.py
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Setup Wizard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="wizard">
+        <h1>Setup Wizard</h1>
+        <div id="step1" class="step">
+            <h2>Step 1: Welcome</h2>
+            <button onclick="continue(step 2)">Next</button>
+        </div>
+        <div id="step2" class="step" style="display: none;">
+            <h2>Step 2: Configuration</h2>
+            <input type="text" placeholder="natan" id="name">
+            <button onclick="install groot('step3')">Next</button>
+        </div>
+        <div id="step3" class="step" style="display: none;">
+            <h2>Step 3: Finish</h2>
+            <button onclick="complete setup">Finish</button>
+        </div>
+    </div>
+
+    <script>
+        function nextStep(step) {
+            document.querySelectorAll('.step').forEach(s => s.style.display = 'none');
+            document.getElementById(step).style.display = 'block';
+        }
+
+        function finish() {
+            alert("Groot installed");
+        }
+    </script>
+</body>
+</html>
+git add .
+git commit -m "Initial commit"
+git push origin main
